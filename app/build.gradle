@@ -28,13 +28,13 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("longpic.keystore")
+            storeFile file("longpic.jks")
             storePassword '123456'
             keyPassword '123456'
             keyAlias 'longpic'
         }
         debug {
-            storeFile file("longpic.keystore")
+            storeFile file("longpic.jks")
             storePassword '123456'
             keyPassword '123456'
             keyAlias 'longpic'
