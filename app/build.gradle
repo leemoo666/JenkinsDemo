@@ -21,28 +21,29 @@ android {
         buildConfigField "boolean", "LEO_DEBUG", "true"
         buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
         buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
-//        signingConfig signingConfigs.release
+        signingConfig signingConfigs.release
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
 
     signingConfigs {
-//        release {
-//            storeFile file("shijiebang.keystore")
-//            storePassword 'shijiebang'
-//            keyPassword 'shijiebang'
-//            keyAlias 'shijiebang.keystore'
-//        }
-//        debug {
-//            storeFile file("debug.keystore")
-//            storePassword 'android'
-//            keyPassword 'android'
-//            keyAlias 'androiddebugkey'
-//        }
+        release {
+            storeFile file("longpic.keystore")
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'longpic'
+        }
+        debug {
+            storeFile file("longpic.keystore")
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias 'longpic'
+        }
     }
 
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
             buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
             buildConfigField 'String', 'IM_SERVER_HOST', RELEASE_IM_SERVER_HOST
@@ -54,6 +55,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            signingConfig signingConfigs.debug
             buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
             buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
             buildConfigField 'String', 'IM_SERVER_HOST', RELEASE_IM_SERVER_HOST
